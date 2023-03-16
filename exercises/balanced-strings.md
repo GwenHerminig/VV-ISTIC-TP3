@@ -25,4 +25,52 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+HAMONO Hermine et ROY Raphaël
 
+2. Notre coverage est de 100% au premier essai. Nous n'avons donc pas rajouté de tests.
+![img.png](img.png)
+3. Voici ci dessous les tests ajoutés.
+```
+    //Base Choice Coverage for the implementation line return curlyBraces == 0 && squareBrackets == 0 && parentheses == 0;
+    // 0 0 0
+    @Test
+    public void ooo() {
+        assertTrue(isBalanced("(([{}]))"));
+    }
+    // x 0 0
+    @Test
+    public void xoo() {
+        assertFalse(isBalanced("({}[]"));
+    }
+    @Test
+    public void oxo() {
+        assertFalse(isBalanced("()[{}"));
+    }
+    // x 0 0
+    @Test
+    public void oox() {
+        assertFalse(isBalanced("()[]{"));
+    }
+    @Test
+    public void xxo() {
+        assertFalse(isBalanced("([{}"));
+    }
+    @Test
+    public void oxx() {
+        assertFalse(isBalanced("(){["));
+    }
+    // x 0 0
+    @Test
+    public void xox() {
+        assertFalse(isBalanced("({[]"));
+    }
+    @Test
+    public void xxx() {
+        assertFalse(isBalanced("({["));
+    }
+```
+Nous pensons que le coverage est amélioré grâce à ces tests même si certains sont sans doute redondants avec de précédents tests.
+En effet nous avons pris en compte le cas ou il y a 0 d'un symbole et x d'un autre et toutes les combinaisons possible entre ceux là.
+Nous avons pris x = 1 comme cas représentatif.
+4. ![img_1.png](img_1.png)
+Nous avons tuer tout les mutants ce qui augmente notre confiance en notre code.

@@ -40,3 +40,28 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+2. ![img_5.png](img_5.png)
+La ligne que nous n'atteignions pas est :
+![img_6.png](img_6.png)
+On a ajouté ce test pour 100% de coverage:
+```
+ @Test
+    public void toCompleteCoverage() {
+        BinaryHeap<Integer> heap = new BinaryHeap<>((a, b) -> a - b);
+        heap.push(3);
+        heap.push(2);
+        heap.push(1);
+        heap.push(4);
+        heap.push(5);
+        assertEquals(1, heap.pop());
+        assertEquals(2, heap.pop());
+        assertEquals(3, heap.pop());
+        assertEquals(4, heap.pop());
+        assertEquals(5, heap.pop());
+    }
+```
+![img_7.png](img_7.png)
+4.
+![img_8.png](img_8.png)
+On a 82% de mutants tués ce qui est supèrieur à 80%, on peut avoir une certaine confiance en notre implémentation.
+

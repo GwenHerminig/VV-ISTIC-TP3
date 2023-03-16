@@ -52,4 +52,23 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
+2. ![img_2.png](img_2.png)
+Après avoir ajouter un test nous augmentons le coverage de 2%:
+```
+ @Test
+    public void throwException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Date(31,13,2000);
+        });
+        String expectedMessage = "Invalid date.";
+        String actualMessage = exception.getMessage();
 
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+```
+![img_3.png](img_3.png)
+3. Prenons le cas de isValidDate :  if (month < 1 || month > 12) 
+Il faudrait tester le cas ou le mois est plus petit que 1 supèrieur à 12 et entre 1 et 12.
+4. ![img_4.png](img_4.png)
+Nous avons tuer plus de 80% des mutants ce qui reste un score acceptable pour s'assurer de la fiabilité de notre code.
