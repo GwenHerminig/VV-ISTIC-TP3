@@ -76,4 +76,42 @@ class StringUtilsTest {
         assertTrue(isBalanced("abc[def]{ghi}jkl"));
         assertTrue(isBalanced("a[b{c}d]e(f)g"));
     }
+
+    //Base Choice Coverage for the implementation line return curlyBraces == 0 && squareBrackets == 0 && parentheses == 0;
+    // 0 0 0
+    @Test
+    public void ooo() {
+        assertTrue(isBalanced("(([{}]))"));
+    }
+    // x 0 0
+    @Test
+    public void xoo() {
+        assertFalse(isBalanced("({}[]"));
+    }
+    @Test
+    public void oxo() {
+        assertFalse(isBalanced("()[{}"));
+    }
+    // x 0 0
+    @Test
+    public void oox() {
+        assertFalse(isBalanced("()[]{"));
+    }
+    @Test
+    public void xxo() {
+        assertFalse(isBalanced("([{}"));
+    }
+    @Test
+    public void oxx() {
+        assertFalse(isBalanced("(){["));
+    }
+    // x 0 0
+    @Test
+    public void xox() {
+        assertFalse(isBalanced("({[]"));
+    }
+    @Test
+    public void xxx() {
+        assertFalse(isBalanced("({["));
+    }
 }
